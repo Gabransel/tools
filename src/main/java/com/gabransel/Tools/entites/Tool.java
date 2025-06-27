@@ -1,4 +1,4 @@
-package com.gabransel.Tools;
+package com.gabransel.Tools.entites;
 
 import jakarta.persistence.*;
 
@@ -16,7 +16,7 @@ public class Tool {
     private int availableQuantity;
 
     @OneToMany(mappedBy = "tool")
-    private List<BorrowRecord> borrowRecords = new ArrayList<>();
+    private List<LoanRecord> loanRecords = new ArrayList<>();
 
     public Tool() {
     }
@@ -59,11 +59,11 @@ public class Tool {
         this.availableQuantity = availableQuantity;
     }
 
-    public List<BorrowRecord> getBorrowRecords() {
-        return borrowRecords;
+    public List<LoanRecord> getBorrowRecords() {
+        return loanRecords;
     }
 
-    public void setBorrowRecords(List<BorrowRecord> borrowRecords) {
-        this.borrowRecords = borrowRecords;
+    public void setBorrowRecords(List<LoanRecord> loanRecords) {
+        this.loanRecords = loanRecords;
     }
 }

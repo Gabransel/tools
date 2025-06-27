@@ -1,5 +1,7 @@
-package com.gabransel.Tools;
+package com.gabransel.Tools.entites;
 
+import com.gabransel.Tools.entites.Person;
+import com.gabransel.Tools.entites.Tool;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -7,7 +9,7 @@ import jakarta.persistence.ManyToOne;
 
 import java.time.LocalDateTime;
 
-public class BorrowRecord {
+public class LoanRecord {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +21,10 @@ public class BorrowRecord {
     private LocalDateTime borrowDate;
     private LocalDateTime returnDate;
 
-    public BorrowRecord(){
+    public LoanRecord(){
     }
 
-    public BorrowRecord(Person person, Tool toll){
+    public LoanRecord(Person person, Tool toll){
         this.person = person;
         this.tool = tool;
         this.borrowDate = LocalDateTime.now();
