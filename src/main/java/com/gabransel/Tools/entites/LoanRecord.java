@@ -1,7 +1,5 @@
 package com.gabransel.Tools.entites;
 
-import com.gabransel.Tools.entites.Person;
-import com.gabransel.Tools.entites.Tool;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,7 +13,7 @@ public class LoanRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    private Person person;
+    private Student student;
     @ManyToOne
     private Tool tool;
     private LocalDateTime borrowDate;
@@ -24,8 +22,8 @@ public class LoanRecord {
     public LoanRecord(){
     }
 
-    public LoanRecord(Person person, Tool toll){
-        this.person = person;
+    public LoanRecord(Student student, Tool toll){
+        this.student = student;
         this.tool = tool;
         this.borrowDate = LocalDateTime.now();
     }
@@ -38,12 +36,12 @@ public class LoanRecord {
         this.id = id;
     }
 
-    public Person getPerson() {
-        return person;
+    public Student getPerson() {
+        return student;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setPerson(Student student) {
+        this.student = student;
     }
 
     public Tool getTool() {
@@ -68,5 +66,9 @@ public class LoanRecord {
 
     public void setReturnDate(LocalDateTime returnDate) {
         this.returnDate = returnDate;
+    }
+
+    public void returnTool() {
+        this.returnDate = LocalDateTime.now();
     }
 }

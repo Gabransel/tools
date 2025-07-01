@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Person {
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,10 +16,10 @@ public class Person {
     @OneToMany(mappedBy = "person")
     private List<LoanRecord> loanRecords = new ArrayList<>();
 
-    public Person (){
+    public Student(){
     }
 
-    public Person(String name){
+    public Student(String name){
         this.name = name;
     }
 
