@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface LoanRecordRepository extends JpaRepository<LoanRecord, Long> {
     List<LoanRecord> findByReturnDateIsNull();
-    List<LoanRecord> findByPersonId(Long personId);
+    List<LoanRecord> findByStudentId(Long personId);
     List<LoanRecord> findByToolId(Long toolId);
 }

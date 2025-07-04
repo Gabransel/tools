@@ -64,7 +64,7 @@ public class ToolService {
         return "FERRAMENTA DEVOLVIDA COM SUCESSO!";
     }
 
-    public List<LoanRecord> getActiveBLoans() {
+    public List<LoanRecord> getActiveLoans() {
         return loanRecordRepository.findByReturnDateIsNull();
     }
 

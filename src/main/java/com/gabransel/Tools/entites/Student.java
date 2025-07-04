@@ -13,7 +13,7 @@ public class Student {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "person")
+    @OneToMany(mappedBy = "student")
     private List<LoanRecord> loanRecords = new ArrayList<>();
 
     public Student(){

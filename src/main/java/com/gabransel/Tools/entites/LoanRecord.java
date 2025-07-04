@@ -1,12 +1,10 @@
 package com.gabransel.Tools.entites;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
+@Entity
 public class LoanRecord {
 
     @Id
